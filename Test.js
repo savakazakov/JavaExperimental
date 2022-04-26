@@ -122,3 +122,39 @@ function outerFunc() {
 
 let f = outerFunc();
 f();
+
+console.log("this testing");
+
+const store = 
+{
+    address: 'Lancaster',
+    f: function()
+    {
+        const inner = () =>
+        {
+            // console.log(this);
+            return `store address is ${ this.address } !`;
+        }
+        return inner();
+    }
+};
+console.log(store.f());
+
+let something = 10;
+
+function simpleFunc()
+{
+    console.log(this.something);
+}
+
+simpleFunc();
+// error
+
+function varTest()
+{
+    var addsas = 10029;
+    console.log(addsas);
+}
+
+console.log(addsas);
+varTest();
