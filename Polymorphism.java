@@ -5,12 +5,12 @@ public class Polymorphism
         Polymorphism poly = new Polymorphism();
         Person p = poly.new Person(15, "Ben");
         p.method();
-        Student s  = poly.new Student(16, "Jon", 1234);
+        Student s = poly.new Student(16, "Jon", 1234);
         s.method();
         Person p1;
         p1 = s;
         p1.method();
-        if(p1 instanceof Student)
+        if (p1 instanceof Student)
         {
             System.out.println("Yes");
             Student s1 = (Polymorphism.Student) p1;
@@ -23,7 +23,7 @@ public class Polymorphism
         // Person p2 = poly.new Student(17, "Cindy", 9876);
         // p2.method();
         // System.out.println(p2.getClass().getMethods()[0]);
-        
+
         // p2.getClass().getSimpleName()
         // System.out.println(p1.sID);
     }
@@ -55,7 +55,7 @@ public class Polymorphism
             super(age, name);
             this.sID = sID;
         }
-        
+
         public void method()
         {
             // super.method();
