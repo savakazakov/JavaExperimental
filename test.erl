@@ -1,5 +1,5 @@
 -module(test).
--export([increment/1 , decrement/1 , double/1, map/2, sumToN/1, create_list/1, area/1, fact/1, parTime/1, seqTime/1, factTime/1, start/0, say_something/2]).
+-export([answer/1, increment/1, decrement/1, double/1, map/2, sumToN/1, create_list/1, area/1, fact/1, parTime/1, seqTime/1, factTime/1, start/0, say_something/2]).
 
 
 say_something(_What, 0) -> done;
@@ -75,4 +75,10 @@ map(_, []) -> [];
 map(F, [H | T]) -> [F(H) | map(F, T)]. 
 increment(X) -> X+1.
 decrement(X) -> X-1. 
-double(X) -> X * 2. 
+double(X) -> X * 2.
+
+answer([H|T]) -> answer(H>0,[H|T], 0).
+answer(true ,[], Acc) -> Acc + 9;
+answer(false ,[], Acc) -> io:format("~p~n", [1]), Acc - 9000000;
+answer(true ,[H|T], Acc) when(H>0) -> io:format("~p~n", [2]), answer(H > 0, T, Acc + H);
+answer(false ,[H|T], Acc) when(H<1) -> io:format("~p~n", [3]), answer(H > 0, T, Acc).

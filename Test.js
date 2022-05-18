@@ -166,7 +166,7 @@ function varTest()
  *
  * sdfg
  */
-console.log(addsas);
+// console.log(addsas);
 varTest();
 
 /*
@@ -177,3 +177,48 @@ asdf
 */
 
 class Somethinds { }
+
+const fa = x => y => x + (y * 2);
+const data1 = [1, 2, 3, 4];
+const result = data1.map(fa(2));
+console.log(/* JSON.stringify( */result/* ) */);
+
+const nba_teams = [
+    {
+        "conference": "Eastern",
+        "division": "Atlantic",
+        "name": "Boston Celtics",
+        "city": "Boston",
+        "state": "MA",
+        "stadium": "TD Garden"
+    },
+    {
+        "conference": "Eastern",
+        "division": "Atlantic",
+        "name": "Brooklyn Nets",
+        "city": "New York",
+        "state": "NY",
+        "stadium": "Barclays Center"
+    },
+    {
+        "conference": "Eastern",
+        "division": "Atlantic",
+        "name": "New York Knicks",
+        "city": "New York",
+        "state": "NY",
+        "stadium": "Madison Square Garden"
+    },
+    {
+        "conference": "Western",
+        "division": "Pacific",
+        "name": "Sacramento Kings",
+        "city": "Sacramento",
+        "state": "CA",
+        "stadium": "Golden 1 Center"
+    }
+];
+
+const b2i = nba_teams.reduce((acc, elem) => acc += elem.division == "Pacific" ? 1 : 0, 0);
+console.log(b2i);
+const b2ii = nba_teams.reduce((acc, elem) => acc += Object.values(elem).reduce( (acc2, elem2) => acc2 += elem2.length, 0), 0);
+console.log(b2ii);
